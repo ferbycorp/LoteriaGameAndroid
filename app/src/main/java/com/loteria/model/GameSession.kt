@@ -19,7 +19,6 @@ data class GameSession(
 
     fun addPlayer(player: Player): GameSession {
         require(canJoin()) { "Lobby is full or no longer accepting players." }
-        require(players.none { it.id == player.id }) { "Player already exists in the session." }
         return copy(players = players + player)
     }
 
